@@ -28,7 +28,6 @@ private slots:
     void penWidth();
     void about();
 
-
 private:
     Ui::MainWindow *ui;
     void createActions();
@@ -42,6 +41,7 @@ private:
     QMenu* helpMenu;
     QAction* openAct;
     QList<QAction*> saveAsActs;
+    QAction* exitAct;
     QAction* penColorAct;
     QAction* penWidthAct;
     QAction* printAct;
