@@ -1,24 +1,19 @@
 #include <QtWidgets>
 
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
 #include "scribblearea.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+// MainWindow constructor
+MainWindow::MainWindow()
 {
     scribbleArea = new ScribbleArea();
     setCentralWidget(scribbleArea);
     createActions();
     createMenus();
     setWindowTitle(tr("Scribble"));
-    ui->setupUi(this);
-}
 
-MainWindow::~MainWindow()
-{
-    delete ui;
+    // Size the app
+    resize(500, 500);
 }
 
 void MainWindow::closeEvent(QCloseEvent* event)

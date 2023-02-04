@@ -4,19 +4,15 @@
 #include <QList>
 #include <QMainWindow>
 
+// ScribbleArea used to paint the image
 class ScribbleArea;
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    MainWindow();
 
 protected:
     void closeEvent(QCloseEvent* event) override;
@@ -29,7 +25,7 @@ private slots:
     void about();
 
 private:
-    Ui::MainWindow *ui;
+    // Will tie user actions to functions
     void createActions();
     void createMenus();
     bool maybeSave();
